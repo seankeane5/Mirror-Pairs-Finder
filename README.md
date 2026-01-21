@@ -1,5 +1,14 @@
 # Mirror Pairs Finder
 
+## Quick Start
+To run this program, you need a text file containing your input data. Use the following command in your terminal:
+```bash
+cat input.txt | python mirror_pairs.py
+```
+Replace `input.txt` with the path to your input file.
+
+---
+
 A competitive programming solution that finds the largest palindromic number 
 that can be created by concatenating two numbers from an input dataset.
 
@@ -9,12 +18,24 @@ concatenating any two different numbers from the list.
 
 **Example:**
 - Input: `24 79 42 97 123 124`
-- Output: `42124` 
+- Output: `42124` (from "42" + "124" = "42124", which is a palindrome)
+
+## Input Format
+```
+n
+num1 num2 num3 ... numn
+```
+
+**Example input file:**
+```
+6
+24 79 42 97 123 124
+```
 
 ## Optimization Techniques
 
-1. Two-Character Hash Table Grouping**: Groups numbers by their first two 
-   digits, heavily reducting the amount of canidate pairs.
+1. **Two-Character Hash Table Grouping**: Groups numbers by their first two 
+   digits, reducing candidate pairs from O(n²) to O(n × m) where m << n
    
 2. **Early Exit Checks**: Validates character matches before full palindrome 
    verification
@@ -24,7 +45,7 @@ concatenating any two different numbers from the list.
 
 ## Performance
 - Handles 100,000 numbers in ~0.4 seconds
-- 100x speedup due to the two-character hash table grouping.
+- 100x speedup from naive O(n²) implementation
 - Optimized for Irish Informatics Olympiad constraints
 
 ## Constraints
