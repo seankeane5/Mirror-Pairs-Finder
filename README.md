@@ -35,7 +35,7 @@ num1 num2 num3 ... numn
 ## Optimization Techniques
 
 1. **Two-Character Hash Table Grouping**: Groups numbers by their first two 
-   digits, reducing candidate pairs from O(n²) to O(n × m) where m << n
+   digits, heavily reducing canadite pairs.
    
 2. **Early Exit Checks**: Validates character matches before full palindrome 
    verification
@@ -45,7 +45,7 @@ num1 num2 num3 ... numn
 
 ## Performance
 - Handles 100,000 numbers in ~0.4 seconds
-- 100x speedup from naive O(n²) implementation
+- 100x speedup by using two-character hash table grouping
 - Optimized for Irish Informatics Olympiad constraints
 
 ## Constraints
